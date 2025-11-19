@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Demo Bot - FAQs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0078d7;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .faq-section {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-size: 1.4em;
+      color: #333;
+      margin-top: 40px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+    .faq {
+      margin: 20px 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.05em;
+      cursor: pointer;
+      position: relative;
+      padding-right: 25px;
+    }
+    .faq-question::after {
+      content: "➕";
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 1em;
+      color: #0078d7;
+    }
+    .faq.open .faq-question::after {
+      content: "➖";
+    }
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .faq.open .faq-answer {
+      display: block;
+    }
+    .note {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Demo Bot - FAQs</h1>
+  </header>
+
+  <div class="faq-section">
+    <p class="note">Click on a question to view the answer.</p>
+
+    <h2>Account & Order History</h2>
+    <div class="faq"><div class="faq-question">How can I view my order history?</div><div class="faq-answer">Just log in and go to "My Orders". Everything's neatly listed there.</div></div>
+    <div class="faq"><div class="faq-question">Can I cancel my order after placing it?</div><div class="faq-answer">Yes, you can cancel your order as long as it hasn't been delivered.</div></div>
+    <div class="faq"><div class="faq-question">Is there a time limit for cancelling an order?</div><div class="faq-answer">Orders can typically be cancelled within the delivery status of placement.</div></div>
+    <div class="faq"><div class="faq-question">Can I cancel part of my order?</div><div class="faq-answer">Yes, if your order contains multiple items, you can cancel individual items before they are shipped.</div></div>
+
+    <h2>Offers & Loyalty</h2>
+    <div class="faq"><div class="faq-question">Do you have a loyalty program or rewards?</div><div class="faq-answer">We don’t have any rewards at the moment.</div></div>
+    <div class="faq"><div class="faq-question">Are there any ongoing promotions?</div><div class="faq-answer">We don’t have any active promotions right now, but great deals are always around the corner.</div></div>
+    <div class="faq"><div class="faq-question">Can I gift wrap my order?</div><div class="faq-answer">Yes, gift wrapping is available for select items at checkout.</div></div>
+
+    <h2>Order Management</h2>
+    <div class="faq"><div class="faq-question">My order has already shipped. Can I still cancel it?</div><div class="faq-answer">Unfortunately, shipped orders cannot be cancelled. You can initiate a return instead.</div></div>
+    <div class="faq"><div class="faq-question">Can I cancel my order?</div><div class="faq-answer">Yes, if it hasn’t been delivered yet. Go to the 'Main Menu,' select 'Cancel,' choose the item, provide a reason, and follow the instructions.</div></div>
+    <div class="faq"><div class="faq-question">How do I modify my order?</div><div class="faq-answer">Contact support immediately. Changes are only possible before shipping.</div></div>
+    <div class="faq"><div class="faq-question">What happens if I ordered the wrong item?</div><div class="faq-answer">You can cancel or return it once delivered. Contact support for help.</div></div>
+    <div class="faq"><div class="faq-question">Can I add items to an existing order?</div><div class="faq-answer">No, but you can place a new order. Bundled checkout options are coming soon.</div></div>
+    <div class="faq"><div class="faq-question">Will I be charged for cancellations?</div><div class="faq-answer">No cancellation fee if done before shipping. After shipping, return policies apply.</div></div>
+
+    <!-- Continue with other sections like Tracking, Payment, Returns, Shipping, Support -->
+
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        q.parentElement.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
